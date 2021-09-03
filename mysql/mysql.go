@@ -1,7 +1,6 @@
 package mysql
 
 import (
-	"fmt"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -35,7 +34,6 @@ func New() (*gorm.DB, error) {
 		return _db, nil
 	}
 
-	fmt.Println("again!")
 	_db, err := gorm.Open(mysql.Open(_conf.ConnString), &gorm.Config{
 		SkipDefaultTransaction: true,
 		Logger:                 logger.Default.LogMode(logger.Silent),
